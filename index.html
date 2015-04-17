@@ -1,0 +1,37 @@
+<?php
+
+$test = 'Tharick';
+
+
+?>
+
+
+<script type="text/javascript">
+  
+  
+  var test = 'testdsfdsf';
+  function notifyMe() {
+  if (!Notification) {
+    alert('Notifications are supported in modern versions of Chrome, Firefox, Opera and Firefox.'); 
+    return;
+  }
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+
+  var notification = new Notification($test, {
+    icon: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/092/309/3aeb5a4.jpg',
+    body: "Hey there! You've been notified!",
+  });
+
+  notification.onclick = function () {
+    window.open("http://stackoverflow.com/a/13328397/1269037");      
+  };
+}
+
+</script>
+
+<button onclick="notifyMe()">
+  Notify me!
+</button>
+
